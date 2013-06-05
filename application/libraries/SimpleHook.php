@@ -10,7 +10,7 @@
  * @copyright	Copyright (c) 2013, Remi Heens.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://www.remiheens.fr
- * @version		Version 0.1
+ * @version		Version 0.2
  *
  */
 class SimpleHook
