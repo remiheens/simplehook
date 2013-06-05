@@ -18,7 +18,7 @@ you just have to call the function with the hook's name
 
 Each hook must have a specific key and you have to add one array for each callable function/method
 
-	$config['my_hook'] = array(
+	$config['simplehook'] = array(
 		'first' => 	array(
 			array(
 				'type' => 'library',
@@ -33,8 +33,12 @@ Each hook must have a specific key and you have to add one array for each callab
 			)
 		),
 		'second' =>	array(
-
-			
+			array(
+				'type' => 'rest',
+				'url' => 'https://api.twitter.com/1.1/search/tweets.json',
+				'method' => 'get',
+				'param' => true
+			)
 		)
 	);
 
@@ -45,7 +49,7 @@ the hook 'first' call two functions :
 
 ## Configurations keys
 
-* __type__ string library|helper
+* __type__ string library|helper|rest|model
 * __param__ boolean true if params send to method/function
 
 if __type__ = library|model
@@ -55,5 +59,9 @@ if __type__ = library|model
 if __type__ = helper
 * __helper__ string helper name
 * __function__ string function name
+
+if __type__ = rest
+* __url__ string url to call
+* __method__ string POST|GET
 
 
