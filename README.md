@@ -45,14 +45,14 @@ the hook 'first' call two functions :
 
 ## configurations keys
 
-* _type_ string library|helper
+* __type__ string library|helper
 
-if _type_ = library
-* _class_ string class name
-* _method_ string method name
+if __type__ = library
+* __class__ string class name
+* __method__ string method name
 
-if _type_ = helper
-* _helper_ string helper name
-* _function_ string function name
+if __type__ = helper
+* __helper__ string helper name
+* __function__ string function name
 
-* _param_ boolean true if params send to method/function
+* __param__ boolean true if params send to method/function
