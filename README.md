@@ -1,6 +1,6 @@
 # SimpleHook
 
-This is a library to create &amp; manage simply custom hooks in Codeigniter.
+Codeigniter Library to create &amp; manage custom hooks.
 
 ## Installation
 
