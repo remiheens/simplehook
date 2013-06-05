@@ -69,6 +69,23 @@ class SimpleHook
 						}
 						
 					break;
+					case 'model':
+						if(isset($hook['class']) && !empty($hook['class']) && isset($hook['method']) && !empty($hook['method']))
+						{
+							$class = $hook['class'];
+							$method = $hook['method'];
+							$this->CI->load->model($class);
+							if(isset($hook['param']) && $hook['param'] === true && isset($args) && !empty($args) )
+							{
+								$returns[$class.'::'.$method] = call_user_func_array(array($this->CI->$class,$method),$args);
+							}
+							else
+							{
+								$returns[$class.'::'.$method] = $this->CI->$class->$method();
+							}
+						}
+						
+					break;
 					case 'helper':
 						if(isset($hook['helper']) && !empty($hook['helper']) && isset($hook['function']) && !empty($hook['function']))
 						{
@@ -86,11 +103,44 @@ class SimpleHook
 							}
 						}
 					break;
+					case 'rest':
+						if(isset($hook['url']) && !empty($hook['url']) && isset($hook['method']) && !empty($hook['method']))
+						{
+							$function = 'REST::'.$hook['url'];
+							$returns[$function] = $this->curl($hook,$args);
+						}
+					break;
 				}
 			}
 		}
 		
 		return $returns;
+	}
+
+	private function curl($hook, $args = array())
+	{
+		$curl_handle = curl_init();  
+		if(isset($hook['param']) && $hook['param'] === true)
+		{
+			if($hook['method'] === 'post') 
+			{
+				curl_setopt($curl_handle, CURLOPT_POST, count($args));
+				curl_setopt($curl_handle, CURLOPT_POSTFIELDS, http_build_query($args, '', '&'));
+			}
+			elseif($hook['method'] === 'get')
+			{
+				$hook['url'] .= '?'.http_build_query($args);
+			}
+		}
+
+		curl_setopt($curl_handle, CURLOPT_URL, $hook['url']);  
+		curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);  
+		curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, FALSE); 
+		curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, 2); 
+		
+		$buffer = curl_exec($curl_handle);
+		curl_close($curl_handle); 
+		return json_decode($buffer);
 	}
 }
 

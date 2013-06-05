@@ -15,5 +15,11 @@ $config['simplehook'] = array(
 		)
 	),
 	'second' =>	array(
+		array(
+			'type' => 'rest',
+			'url' => 'https://api.twitter.com/1.1/search/tweets.json',
+			'method' => 'get',
+			'param' => true
+		)
 	)
 );

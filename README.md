@@ -46,8 +46,9 @@ the hook 'first' call two functions :
 ## Configurations keys
 
 * __type__ string library|helper
+* __param__ boolean true if params send to method/function
 
-if __type__ = library
+if __type__ = library|model
 * __class__ string class name
 * __method__ string method name
 
@@ -55,4 +56,4 @@ if __type__ = helper
 * __helper__ string helper name
 * __function__ string function name
 
-* __param__ boolean true if params send to method/function
+
