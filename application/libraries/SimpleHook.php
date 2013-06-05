@@ -8,7 +8,7 @@
  * @package		CodeIgniter
  * @author		Remi Heens | www.remiheens.fr | ci@remiheens.fr
  * @copyright	Copyright (c) 2013, Remi Heens.
- * @license		http://www.opensource.org/licenses/mit-license.php
+ * @license		http://creativecommons.org/licenses/by-nc/3.0/
  * @link		http://www.remiheens.fr
  * @version		Version 0.2
  *
