@@ -43,7 +43,7 @@ the hook 'first' call two functions :
 * a helper function demo without param
 
 
-## configurations keys
+## Configurations keys
 
 * __type__ string library|helper
 
