@@ -36,12 +36,7 @@
         <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
-          <h1>
-<a name="simplehook" class="anchor" href="#simplehook"><span class="octicon octicon-link"></span></a>SimpleHook</h1>
-
-<p>Codeigniter Library to create &amp; manage custom hooks.</p>
-
-<h2>
+          <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Add library SimpleHook.php to your application folder and create a configuration file named simplehook.php</p>
@@ -51,8 +46,8 @@
 
 <p>you just have to call the function with the hook's name </p>
 
-<pre><code>$return = simplehook('first');
-</code></pre>
+<div class="highlight"><pre><span class="nv">$return</span> <span class="o">=</span> <span class="nx">simplehook</span><span class="p">(</span><span class="s1">'first'</span><span class="p">);</span>
+</pre></div>
 
 <p><em>$return</em> is an array of each functions return , because you can set several functions in a hook.</p>
 
@@ -61,30 +56,30 @@
 
 <p>Each hook must have a specific key and you have to add one array for each callable function/method</p>
 
-<pre><code>$config['simplehook'] = array(
-    'first' =&gt;  array(
-        array(
-            'type' =&gt; 'library',
-            'class' =&gt; 'demo',
-            'method' =&gt; 'test',
-            'param' =&gt; true
-        ),
-        array(
-            'type' =&gt; 'helper',
-            'helper' =&gt; 'demo',
-            'function' =&gt; 'demo'
-        )
-    ),
-    'second' =&gt; array(
-        array(
-            'type' =&gt; 'rest',
-            'url' =&gt; 'https://api.twitter.com/1.1/search/tweets.json',
-            'method' =&gt; 'get',
-            'param' =&gt; true
-        )
-    )
-);
-</code></pre>
+<div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">'simplehook'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first'</span> <span class="o">=&gt;</span>  <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'library'</span><span class="p">,</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'demo'</span><span class="p">,</span>
+            <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'test'</span><span class="p">,</span>
+            <span class="s1">'param'</span> <span class="o">=&gt;</span> <span class="k">true</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'helper'</span><span class="p">,</span>
+            <span class="s1">'helper'</span> <span class="o">=&gt;</span> <span class="s1">'demo'</span><span class="p">,</span>
+            <span class="s1">'function'</span> <span class="o">=&gt;</span> <span class="s1">'demo'</span>
+        <span class="p">)</span>
+    <span class="p">),</span>
+    <span class="s1">'second'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'rest'</span><span class="p">,</span>
+            <span class="s1">'url'</span> <span class="o">=&gt;</span> <span class="s1">'https://api.twitter.com/1.1/search/tweets.json'</span><span class="p">,</span>
+            <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'get'</span><span class="p">,</span>
+            <span class="s1">'param'</span> <span class="o">=&gt;</span> <span class="k">true</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
 
 <p>the hook 'first' call two functions :</p>
 
@@ -141,6 +136,16 @@
     <p class="name"></p>
   </div>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-41518311-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 </body>
 </html>
