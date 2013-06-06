@@ -9,38 +9,40 @@ Add library SimpleHook.php to your application folder and create a configuration
 ## Usage
 
 you just have to call the function with the hook's name 
-
-	$return = simplehook('first');
+```php
+$return = simplehook('first');
+```
 
 *$return* is an array of each functions return , because you can set several functions in a hook.
 
 ## Configuration
 
 Each hook must have a specific key and you have to add one array for each callable function/method
-
-	$config['simplehook'] = array(
-		'first' => 	array(
-			array(
-				'type' => 'library',
-				'class' => 'demo',
-				'method' => 'test',
-				'param' => true
-			),
-			array(
-				'type' => 'helper',
-				'helper' => 'demo',
-				'function' => 'demo'
-			)
+```php
+$config['simplehook'] = array(
+	'first' => 	array(
+		array(
+			'type' => 'library',
+			'class' => 'demo',
+			'method' => 'test',
+			'param' => true
 		),
-		'second' =>	array(
-			array(
-				'type' => 'rest',
-				'url' => 'https://api.twitter.com/1.1/search/tweets.json',
-				'method' => 'get',
-				'param' => true
-			)
+		array(
+			'type' => 'helper',
+			'helper' => 'demo',
+			'function' => 'demo'
 		)
-	);
+	),
+	'second' =>	array(
+		array(
+			'type' => 'rest',
+			'url' => 'https://api.twitter.com/1.1/search/tweets.json',
+			'method' => 'get',
+			'param' => true
+		)
+	)
+);
+```
 
 the hook 'first' call two functions :
 * a library demo and his method test with params
